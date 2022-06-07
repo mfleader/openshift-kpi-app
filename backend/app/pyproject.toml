@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "ocp_kpi_api"
+version = "0.1.0"
+description = ""
+authors = ["mleader <mleader@redhat.com>"]
+license = "Apache 2.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+sqlmodel = "^0.0.6"
+databases = "^0.6.0"
+vyper-config = "^1.1.1"
+uvloop = "^0.16.0"
+httptools = "^0.4.0"
+fastapi = "^0.78.0"
+pydantic = "^1.9.1"
+orjson = "^3.7.2"
+
+[tool.poetry.dev-dependencies]
+watchgod = "^0.8.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
