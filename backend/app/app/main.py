@@ -17,7 +17,6 @@ class ORJSONResponse(JSONResponse):
 
 
 cfg = config.get_config()
-# print(cfg.get('cors_origins'))
 app = FastAPI(default_response_class=ORJSONResponse)
 app.add_middleware(
     CORSMiddleware,
@@ -27,3 +26,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(api_router)
+
+
