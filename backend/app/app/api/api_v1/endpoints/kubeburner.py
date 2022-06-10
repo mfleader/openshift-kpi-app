@@ -10,9 +10,7 @@ from app.models.model import KubeBurner
 router = APIRouter()
 
 
-@router.get('/',
-    response_model = List[KubeBurner]
-    )
+@router.get('/', response_model = List[KubeBurner])
 def root(
     *,
     session: Session = Depends(get_session),
@@ -21,5 +19,16 @@ def root(
 ):
     kubeburners = session.exec(
             select(KubeBurner).offset(offset).limit(limit)).all()
-
     return kubeburners
+
+
+@router.get('/{uuid}', response_model=List[KubeBurner])
+def read_kubeburner(
+    *,
+    session: Session = Depends(get_session),
+    uuid: str
+):
+    kubeburner = session.exec(
+        select(KubeBurner).where(KubeBurner.uuid == uuid)
+    ).all()
+    return kubeburner

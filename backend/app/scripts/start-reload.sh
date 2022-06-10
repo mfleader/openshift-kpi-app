@@ -4,5 +4,5 @@ uvicorn \
     --reload \
     --host="0.0.0.0" \
     --port=8000 \
-    --log-level trace \
+    --log-level info \
     app.main:app
