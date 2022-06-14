@@ -1,0 +1,9 @@
+cors_origins = []
+
+[database]
+dialect=
+user=
+password=
+server_url=
+name=
+port=

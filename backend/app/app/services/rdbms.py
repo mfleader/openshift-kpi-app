@@ -9,7 +9,8 @@ engine = sqm.create_engine(
         f"{cfg.get('database.dialect')}://"
         f"{cfg.get('database.user')}:"
         f"{cfg.get('database.password')}@"
-        f"{cfg.get('database.server_url')}:5432/"
+        f"{cfg.get('database.server_url')}:"
+        f"{cfg.get('database.port')}/"
         f"{cfg.get('database.name')}"),
     echo = True
 )
